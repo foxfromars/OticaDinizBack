@@ -9,11 +9,12 @@ const port = process.env.PORT || 3000
 app.use(express.json());
 
 app.use(
-  cors()
+  cors({
+     'Access-Control-Allow-Origin' : '*',
+  })
 );
 
 app.get('/', (req, res) => {
-  res.header('Access-Control-Allow-Origin','*')
   res.send('Bem Vindo a OticaDiniz!')
 })
 
