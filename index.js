@@ -6,13 +6,14 @@ require('dotenv').config()
 
 const port = process.env.PORT || 3000
 
-app.use(express.json());
-
 app.use(
   cors({
      'Access-Control-Allow-Origin' : '*',
   })
 );
+
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
   res.send('Bem Vindo a OticaDiniz!')
