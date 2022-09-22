@@ -13,6 +13,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
+  res.header('Access-Control-Allow-Origin','*')
   res.send('Bem Vindo a OticaDiniz!')
 })
 
