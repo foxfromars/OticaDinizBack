@@ -5,6 +5,7 @@ exports.createResult = (req, res) => {
   var transport = nodemailer.createTransport({
     host: process.env.HOST_MAIL,
     port: process.env.PORT_MAIL,
+    secure: true,
     auth: {
       user: process.env.USER_MAIL,
       pass: process.env.PASS_MAIL
@@ -14,8 +15,8 @@ exports.createResult = (req, res) => {
   const { data, date } = req.body
 
   var message = {
-    from: "noreplay@oticadiniz.com",
-    to: "felipe.melo@icomp.ufam.edu.br",
+    from: "noreplay@oticasdinizkariri.com.br",
+    to: process.env.SRC_EMAIL,
     subject: "Teste de Visão",
     text: "Plaintext version of the message",
     html: "<h2>Teste de Visão</h2><br>"
@@ -50,12 +51,7 @@ exports.createResult = (req, res) => {
   };
 
 
-  transport.sendMail(message, (err) => {
-    if (err) return res.send(400).json({
-      erro: true,
-      message: "Erro ao enviar e-mail"
-    })
-  })
+  transport.sendMail(message)
 
   return res.send(201).json({ message: 'E-mail enviado com sucesso' })
 }
@@ -64,6 +60,7 @@ exports.createContact = (req, res) => {
   var transport = nodemailer.createTransport({
     host: process.env.HOST_MAIL,
     port: process.env.PORT_MAIL,
+    secure: true,
     auth: {
       user: process.env.USER_MAIL,
       pass: process.env.PASS_MAIL
@@ -73,8 +70,8 @@ exports.createContact = (req, res) => {
   const body = req.body
 
   var message = {
-    from: "noreplay@oticadiniz.com",
-    to: "felipe.melo@icomp.ufam.edu.br",
+    from: "noreplay@oticasdinizkariri.com.br",
+    to: process.env.SRC_EMAIL,
     subject: "Contato do site Oticia Diniz Teste de Visão",
     text: "Contato do site Oticia Diniz Teste de Visão",
     html: "<h2>Contato do Oticia Diniz Teste de Visão</h2><br>"
@@ -83,12 +80,7 @@ exports.createContact = (req, res) => {
       + `<p><strong>MENSAGEM:</strong><br>${body.message}</p><br>`
   };
 
-  transport.sendMail(message, (err) => {
-    if (err) return res.send(400).json({
-      erro: true,
-      message: "Erro ao enviar e-mail"
-    })
-  })
+  transport.sendMail(message)
 
   return res.send(201).json({ message: 'E-mail enviado com sucesso' })
 }
