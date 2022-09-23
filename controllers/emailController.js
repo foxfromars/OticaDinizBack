@@ -7,7 +7,7 @@ exports.createResult = (req, res) => {
     port: 465,
     auth: {
       user: 'noreplay@oticasdinizkariri.com.br',
-      pass: '936iUBPgStSXNsk'
+      pass: '886GUepuv^2@Ud8pQw0N'
     }
   });
 
