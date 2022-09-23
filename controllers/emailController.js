@@ -3,11 +3,11 @@ require('dotenv').config()
 
 exports.createResult = (req, res) => {
   var transport = nodemailer.createTransport({
-    host: process.env.HOST_MAIL,
-    port: process.env.PORT_MAIL,
+    host: 'http://mail.oticasdinizkariri.com.br/',
+    port: 465,
     auth: {
-      user: process.env.USER_MAIL,
-      pass: process.env.PASS_MAIL
+      user: 'noreplay@oticasdinizkariri.com.br',
+      pass: '936iUBPgStSXNsk'
     }
   });
 
@@ -15,7 +15,7 @@ exports.createResult = (req, res) => {
 
   var message = {
     from: "noreplay@oticadiniz.com",
-    to: "felipe.melo@icomp.ufam.edu.br",
+    to: "luisfeliperaposobatista@gmail.com",
     subject: "Teste de Visão",
     text: "Plaintext version of the message",
     html: "<h2>Teste de Visão</h2><br>"
