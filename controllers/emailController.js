@@ -33,7 +33,7 @@ exports.createResult = (req, res) => {
       <h1>Saude Geral</h1><br>
 
       <p>Como Esta se sentindo: ${data.feeling}</p><br>
-      <p>Sintomas: ${data.symptoms1}</p><br>
+      <p>Sintomas: ${data.sysmptoms1}</p><br>
       <p>Pressão Sanguínea: ${data.pression}</p><br>
       <p>Problemas: ${data.problem1}</p><br>
       <p>Tratamento Especial: ${data.medicine1}</p><br>
@@ -56,9 +56,9 @@ exports.createResult = (req, res) => {
       - ${data.quatrodois} 
       - ${data.treze}
       </p><br>
-      <p>Messagem</p><br>
+      <p>Messagem :</p><br>
       <p>${data.message}</p><br>
-      <p>Avaliação</p><br>
+      <p>Avaliação :</p><br>
          <p>${data.ratedesc}</p><br>
       `
   };
