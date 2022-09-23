@@ -11,19 +11,21 @@ const PerguntasSchema = new mongoose.Schema(
         email: {
             type: String
         },
+
+       
         feeling: {
             type: String
         },
-        symptoms: {
+        sysmptoms1: {
             type: String
         },
         pression: {
             type: String
         },
-        problem: {
+        problem1: {
             type: String
         },
-        medicine: {
+        medicine1: {
             type: String
         },
         eyePain: {
@@ -111,6 +113,9 @@ const PerguntasSchema = new mongoose.Schema(
             type: String
         },
         value: {
+            type: String
+        },
+        ratedesc: {
             type: String
         },
     },

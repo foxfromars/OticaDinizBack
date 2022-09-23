@@ -4,12 +4,10 @@ const mongoose = require("mongoose");
 const app = express();
 require('dotenv').config()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3333
 
 app.use(
-  cors({
-     'Access-Control-Allow-Origin' : '*',
-  })
+  cors()
 );
 
 app.use(express.json());

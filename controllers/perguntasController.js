@@ -24,10 +24,10 @@ exports.create = (req, res) => {
         nome: req.body.nome,
         email: req.body.email,
         feeling: req.body.feeling,
-        symptoms: req.body.symptoms,
+        sysmptoms1: req.body.sysmptoms1,
         pression: req.body.pression,
-        problem: req.body.problem,
-        medicine: req.body.medicine,
+        problem1: req.body.problem1,
+        medicine1: req.body.medicine1,
         eyePain: req.body.eyePain,
         feelingToday: req.body.feelingToday,
         vision: req.body.vision,
@@ -57,6 +57,7 @@ exports.create = (req, res) => {
         phone: req.body.phone,
         message: req.body.message,
         value: req.body.value,
+        ratedesc: req.body.ratedesc
     })
 
     perguntas
