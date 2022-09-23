@@ -64,14 +64,9 @@ exports.createResult = (req, res) => {
   };
 
 
-  transport.sendMail(message, (err) => {
-    if (err) return res.send(400).json({
-      erro: true,
-      message: "Erro ao enviar e-mail"
-    })
-  })
+  transport.sendMail(message)
 
-  return res.send(201).json({ message: 'E-mail enviado com sucesso' })
+  return res.sendStatus(201).json({ message: 'E-mail enviado com sucesso' })
 }
 
 exports.createContact = (req, res) => {
@@ -100,6 +95,5 @@ exports.createContact = (req, res) => {
 
   transport.sendMail(message)
 
-
-  return res.send(201).json({ message: 'E-mail enviado com sucesso' })
+  return res.sendStatus(201).json({ message: 'E-mail enviado com sucesso' })
 }

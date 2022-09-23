@@ -13,11 +13,12 @@ app.use(
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
-  res.send('Bem Vindo a OticaDiniz!')
-})
+// app.get('/', (req, res) => {
+//   res.send('Bem Vindo a OticaDiniz!')
+// })
 
 const PerguntasRoutes = require('./routes/perguntas');
+
 app.use('/api', PerguntasRoutes);
 
 mongoose

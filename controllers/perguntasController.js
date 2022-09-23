@@ -4,16 +4,16 @@ exports.getAll = async (req, res) => {
     try {
         const perguntas = await Perguntas.findById(req.query.id);
 
-        res.json(perguntas);
+        res.sendStatus(201).json(perguntas);
     } catch (error) {
         console.log(error);
-        res.status(400).json(error);
+        res.sendStatus(400).json(error);
     }
 };
 
 exports.create = (req, res) => {
     if (!req.body) {
-        res.status(400).send({ message: "algo esta vazio!" });
+        res.sendStatus(400).send({ message: "algo esta vazio!" });
         return;
     }
 
@@ -63,10 +63,10 @@ exports.create = (req, res) => {
     perguntas
         .save(perguntas)
         .then(data => {
-            res.send(data)
+            res.sendStatus(201).send(data)
         })
         .catch(err => {
-            res.status(500).send({
+            res.sendStatus(500).send({
                 message: err.message || "aconteceu algum error na criação"
             });
         });
